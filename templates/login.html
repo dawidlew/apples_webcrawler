@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+  <body onload="document.login.username.focus();" onunload="document.login.reset();">
+    <fieldset>
+      <h1>Database Login</h1>
+      {% if error %}<p class=error> {{ error }}</p>{% endif %}
+      <form name=login action="{{ url_for('login') }}" method=post>
+        <label for=username>Username:</label><input type=text name=username required><br>
+        <label for=password>Password:</label><input type=password name=password required><br>
+        <input type=submit class=login value=Login><input type=reset value=Reset>
+      </form>
+    </fieldset>
+  </body>
+{% endblock %}
