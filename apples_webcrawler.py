@@ -28,7 +28,7 @@ def pivot_data(col_dict, timestamp=time.time()):
     row_data['timestamp'] = int(timestamp)
     output.append(row_data)
 
-  # print(str(output))
+  print(str(output))
 
   return output
 
