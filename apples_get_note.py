@@ -23,29 +23,6 @@ def data():
 
 @app.route('/api/apples')
 def data_api():
-    """
-    A simple test API
-    This endpoint return all data as JSON
-    ---
-    responses:
-      200:
-        description: All data
-        schema:
-          id: awesome
-          properties:
-            city:
-              type: string
-              description: City
-            price_max:
-              type: string
-              description: price_max
-            name:
-              type: string
-              description: name
-            price_min:
-              type: string
-              description: price_min
-    """
     return _get_all_data(True)
 
 
@@ -78,7 +55,7 @@ def _get_all_data(as_json=False, tpl='table_all.html'):
             rows_as_dicts.append(d)
 
         dat = json.dumps(rows_as_dicts)
-        res = Response(response=dat,status=200, \
+        res = Response(response=dat, status=200,
                        mimetype="application/json")
     return res
 
