@@ -41,6 +41,7 @@ def _get_all_data(as_json=False, tpl='table_all.html'):
     result1 = cur.fetchall()
     if not as_json:
         res = render_template(tpl, rows1=result1)
+
     else:
         try:
             keys = result1[0].keys()
@@ -57,9 +58,12 @@ def _get_all_data(as_json=False, tpl='table_all.html'):
         dat = json.dumps(rows_as_dicts)
         res = Response(response=dat, status=200,
                        mimetype="application/json")
+
+
+
     return res
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
 
 
