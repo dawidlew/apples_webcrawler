@@ -59,7 +59,7 @@ def _get_all_data(as_json=False, tpl='table_all.html'):
         res = Response(response=dat, status=200,
                        mimetype="application/json")
 
-
+  
 
     return res
 
