@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 QUERY = 'select name, city, round(avg(price_min),2) as price_min, round(avg(price_max),2) as price_max ' \
         'from note where timestamp in (select timestamp from note group by timestamp ' \
-        'order by timestamp desc limit 50) group by name, city'
+        'order by timestamp desc limit 10) group by name, city'
 
 
 @app.route('/')
@@ -59,7 +59,7 @@ def _get_all_data(as_json=False, tpl='table_all.html'):
         res = Response(response=dat, status=200,
                        mimetype="application/json")
 
-  
+
 
     return res
 
