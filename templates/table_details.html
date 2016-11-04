@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+  <body>
+    <table>
+      {% for k, v in zipped_row %}
+        <tr><td>{{ k.upper() }}</td><td>{{ v }}</td></tr>
+      {% endfor %}
+    </table>
+    <a href="/employees">Back</a> <a href="/logout">Logout</a>
+  </body>
+{% endblock %}

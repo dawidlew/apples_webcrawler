@@ -1,0 +1,4 @@
+###### Requirements for apples webcrawler ######
+requests
+bs4
+flask

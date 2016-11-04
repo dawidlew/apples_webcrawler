@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+  <body>
+    <p>Średnie ceny jabłek z ostatnich 10 dni</p>
+    <table>
+      <tr><th>Gatunek</th><th>Miasto</th><th>Cena min</th><th>Cena max</th></tr>
+      {% for row in rows1 %}
+      <tr>
+        <td>{{row['name']}}</td>
+        <td>{{row['city']}}</td>
+        <td>{{row['price_min']}}</td>
+        <td>{{row['price_max']}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <br>
+    </body>
+{% endblock %}
+
+
